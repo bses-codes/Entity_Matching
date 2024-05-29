@@ -1,2 +1,4 @@
 pandas==2.2.2
 scikit_learn==1.4.2
+apache-airflow==2.9.1
+mysql_connector_repackaged==0.3.1
