@@ -1,3 +1,3 @@
-#FROM apache/airflow:latest
-#
-#RUN pip install scikit-learn
+FROM apache/airflow:latest
+
+RUN pip install scikit-learn
