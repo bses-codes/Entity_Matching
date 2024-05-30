@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from sqlalchemy import create_engine
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from function_dag import *
@@ -44,7 +45,8 @@ def create_final_table():
 
     # save to a csv file
     final_df.to_csv('/opt/airflow/datasets/final_table.csv', index=False)
-
+    # engine = create_engine("mysql+pymysql://root:12345678@host.docker.internal/assign")
+    # final_df.to_sql('final', engine, if_exists='append', index=False)
 default_args = {
     'owner': 'bses',
     'retries': 5,
@@ -54,8 +56,8 @@ default_args = {
 with DAG(
     dag_id='dag_final_table',
     default_args=default_args,
-    start_date=datetime(2024, 5, 1),
-    schedule_interval='@daily'
+    start_date=datetime(2024, 5, 29),
+    schedule_interval='@once'
 ) as dag:
     final_table = PythonOperator(
         task_id='create_final_table',

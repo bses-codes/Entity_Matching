@@ -1,4 +1,5 @@
 import mysql.connector as connection
+from sqlalchemy import create_engine
 import pandas as pd
 from datetime import datetime, timedelta
 from airflow import DAG
@@ -7,9 +8,9 @@ def con():
 
     conn = connection.connect(
         host="host.docker.internal",
-        database = 'test',
-        user='root',
-        password='12345678')
+        database = '<YOUR_DB_NAME>',
+        user='<YOUR_DB_USERNAME>',
+        password='<YOUR_DB_PASSWORD>',)
 
     query = "Select * from rw_transaction_data"
     rw_transaction_data = pd.read_sql(query,conn)
@@ -25,6 +26,7 @@ def con():
 
     return merged_df
 def create_final(ti):
+    engine = create_engine("mysql+pymysql://YOUR_DB_USERNAME:YOUR_DB_PASSWORD@host.docker.internal/YOUR_DB_NAME")
     merged_df = ti.xcom_pull(task_ids='connect', key='return_value')
     merged_df['last_modified_date'] = pd.to_datetime(merged_df['last_modified_date'])
     merged_df['month'] = merged_df['last_modified_date'].dt.month
@@ -95,18 +97,18 @@ def create_final(ti):
 
     final_df = pd.merge(final_df,df8,on='payer_account_id')
     final_df['run_date'] = datetime.today().strftime('%Y-%m-%d')
-
-    final_df.to_csv('/opt/airflow/datasets/cust_prof.csv')
+    final_df.to_sql('<NEW_TABLE_NAME>', engine, if_exists='replace', index=False)
+    # final_df.to_csv('/opt/airflow/datasets/cust_prof.csv')
 
 
 default_args = {
-    'owner': 'bses',
+    'owner': '<AIRFLOW_OWNER_NAME>',
     'retries': 5,
     'retry_delay': timedelta(minutes=5)
 }
 
 with DAG(
-    dag_id='dag_analysis',
+    dag_id='dag_profile',
     default_args=default_args,
     start_date=datetime(2024, 5, 29),
     schedule_interval='@once'

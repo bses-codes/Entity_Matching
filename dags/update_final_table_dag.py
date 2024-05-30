@@ -2,12 +2,13 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from function_dag import *
+from sqlalchemy import create_engine
 
 def update_table():
     df_lengths = retrieve()
 
     # read the data
-    final_df = pd.read_csv('/opt/airflow/datasets/final_table.csv', index_col=0)
+    final_df = pd.read_csv('/opt/airflow/datasets/final_table.csv')
     layout_1, layout_2, layout_3, layout_4, layout_5 = read_data()
     layout_1_c = layout_1.copy().loc[df_lengths['lay1']:]
     layout_2_c = layout_2.copy().loc[df_lengths['lay2']:]
@@ -28,7 +29,9 @@ def update_table():
     new_final_df = add_new_values(final_df, dict_layout)
     if 'index' in new_final_df.columns:
         new_final_df.drop('index', axis=1, inplace=True)
-    new_final_df.to_csv('/opt/airflow/datasets/final_table.csv')
+    # engine = create_engine("mysql+pymysql://root:12345678@host.docker.internal/assign")
+    # final_df.to_sql('<>', engine, if_exists='append', index=False)
+    new_final_df.to_csv('/opt/airflow/datasets/final_table.csv', index=False)
 
 
 default_args = {

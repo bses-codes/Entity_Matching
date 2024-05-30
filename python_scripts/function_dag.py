@@ -113,7 +113,7 @@ def combine(odf, odf1, df, df1, Pid1, Pid2):
 
     odf1 = odf1.merge(matches_df[['matched_id', 'lookup_id']], left_on=Pid2, right_on='lookup_id', how='left')
     odf1.drop(columns=['lookup_id'], inplace=True)
-
+    # odf.reset_index(inplace=True)
     merged_df = odf1.merge(odf, left_on='matched_id', right_on=Pid1, how='outer')
     merged_df.drop(columns=['matched_id'], inplace=True)
 
