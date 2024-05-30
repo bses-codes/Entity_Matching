@@ -1,0 +1,21 @@
+[2024-05-30T11:46:16.369+0000] {processor.py:161} INFO - Started process (PID=7331) to work on /opt/airflow/dags/update_final_table_dag.py
+[2024-05-30T11:46:16.370+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/update_final_table_dag.py for tasks to queue
+[2024-05-30T11:46:16.373+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:46:16.373+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/update_final_table_dag.py
+[2024-05-30T11:46:16.812+0000] {processor.py:840} INFO - DAG(s) 'dag_update_table' retrieved from /opt/airflow/dags/update_final_table_dag.py
+[2024-05-30T11:46:16.823+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:46:16.822+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-30T11:46:16.831+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:46:16.831+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_update_table to None, run_after=None
+[2024-05-30T11:46:16.838+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/update_final_table_dag.py took 0.477 seconds
+[2024-05-30T11:46:47.118+0000] {processor.py:161} INFO - Started process (PID=7371) to work on /opt/airflow/dags/update_final_table_dag.py
+[2024-05-30T11:46:47.119+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/update_final_table_dag.py for tasks to queue
+[2024-05-30T11:46:47.121+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:46:47.121+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/update_final_table_dag.py
+[2024-05-30T11:46:47.567+0000] {processor.py:840} INFO - DAG(s) 'dag_update_table' retrieved from /opt/airflow/dags/update_final_table_dag.py
+[2024-05-30T11:46:47.577+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:46:47.577+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-30T11:46:47.585+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:46:47.585+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_update_table to None, run_after=None
+[2024-05-30T11:46:47.593+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/update_final_table_dag.py took 0.485 seconds
+[2024-05-30T11:47:17.883+0000] {processor.py:161} INFO - Started process (PID=7411) to work on /opt/airflow/dags/update_final_table_dag.py
+[2024-05-30T11:47:17.884+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/update_final_table_dag.py for tasks to queue
+[2024-05-30T11:47:17.887+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:47:17.886+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/update_final_table_dag.py
+[2024-05-30T11:47:18.361+0000] {processor.py:840} INFO - DAG(s) 'dag_update_table' retrieved from /opt/airflow/dags/update_final_table_dag.py
+[2024-05-30T11:47:18.372+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:47:18.372+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-30T11:47:18.381+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:47:18.381+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_update_table to None, run_after=None
+[2024-05-30T11:47:18.390+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/update_final_table_dag.py took 0.518 seconds

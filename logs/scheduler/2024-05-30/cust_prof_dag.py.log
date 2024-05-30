@@ -1,0 +1,21 @@
+[2024-05-30T11:46:21.442+0000] {processor.py:161} INFO - Started process (PID=7359) to work on /opt/airflow/dags/cust_prof_dag.py
+[2024-05-30T11:46:21.444+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cust_prof_dag.py for tasks to queue
+[2024-05-30T11:46:21.447+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:46:21.446+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cust_prof_dag.py
+[2024-05-30T11:46:21.734+0000] {processor.py:840} INFO - DAG(s) 'dag_profile' retrieved from /opt/airflow/dags/cust_prof_dag.py
+[2024-05-30T11:46:21.744+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:46:21.744+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-30T11:46:21.752+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:46:21.752+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_profile to None, run_after=None
+[2024-05-30T11:46:21.760+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cust_prof_dag.py took 0.326 seconds
+[2024-05-30T11:46:52.190+0000] {processor.py:161} INFO - Started process (PID=7405) to work on /opt/airflow/dags/cust_prof_dag.py
+[2024-05-30T11:46:52.192+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cust_prof_dag.py for tasks to queue
+[2024-05-30T11:46:52.194+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:46:52.193+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cust_prof_dag.py
+[2024-05-30T11:46:52.476+0000] {processor.py:840} INFO - DAG(s) 'dag_profile' retrieved from /opt/airflow/dags/cust_prof_dag.py
+[2024-05-30T11:46:52.487+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:46:52.487+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-30T11:46:52.496+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:46:52.495+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_profile to None, run_after=None
+[2024-05-30T11:46:52.503+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cust_prof_dag.py took 0.321 seconds
+[2024-05-30T11:47:22.941+0000] {processor.py:161} INFO - Started process (PID=7445) to work on /opt/airflow/dags/cust_prof_dag.py
+[2024-05-30T11:47:22.942+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cust_prof_dag.py for tasks to queue
+[2024-05-30T11:47:22.943+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:47:22.943+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cust_prof_dag.py
+[2024-05-30T11:47:23.189+0000] {processor.py:840} INFO - DAG(s) 'dag_profile' retrieved from /opt/airflow/dags/cust_prof_dag.py
+[2024-05-30T11:47:23.199+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:47:23.199+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-05-30T11:47:23.206+0000] {logging_mixin.py:188} INFO - [2024-05-30T11:47:23.206+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_profile to None, run_after=None
+[2024-05-30T11:47:23.213+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cust_prof_dag.py took 0.277 seconds
