@@ -24,7 +24,7 @@ def con():
     merged_df = pd.merge(rw_transaction_data, product_category_map, on=['module_id', 'product_id', 'product_type_id'], how='inner')
 
     return merged_df
-def analysis(ti):
+def create_final(ti):
     merged_df = ti.xcom_pull(task_ids='connect', key='return_value')
     merged_df['last_modified_date'] = pd.to_datetime(merged_df['last_modified_date'])
     merged_df['month'] = merged_df['last_modified_date'].dt.month
@@ -96,7 +96,7 @@ def analysis(ti):
     final_df = pd.merge(final_df,df8,on='payer_account_id')
     final_df['run_date'] = datetime.today().strftime('%Y-%m-%d')
 
-    final_df.to_csv('/opt/airflow/dags/final.csv')
+    final_df.to_csv('/opt/airflow/datasets/cust_prof.csv')
 
 
 default_args = {
@@ -108,16 +108,16 @@ default_args = {
 with DAG(
     dag_id='dag_analysis',
     default_args=default_args,
-    start_date=datetime(2024, 5, 1),
-    schedule_interval='@daily'
+    start_date=datetime(2024, 5, 29),
+    schedule_interval='@once'
 ) as dag:
     connect = PythonOperator(
         task_id='connect',
         python_callable=con
     )
-    analysis = PythonOperator(
-        task_id='analysis',
-        python_callable=analysis,
+    create = PythonOperator(
+        task_id='create',
+        python_callable=create_final,
     )
 
-    connect >> analysis
+    connect >> create
