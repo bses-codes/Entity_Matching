@@ -45,8 +45,8 @@ def create_final_table():
 
     # save to a csv file
     final_df.to_csv('/opt/airflow/datasets/final_table.csv', index=False)
-    # engine = create_engine("mysql+pymysql://root:12345678@host.docker.internal/assign")
-    # final_df.to_sql('final', engine, if_exists='append', index=False)
+    # engine = create_engine("mysql+pymysql://<YOUR_DB_USERNAME>:<YOUR_DB_PASSWORD>@host.docker.internal/<YOUR_DB_NAME>")
+    # final_df.to_sql('<YOUR_TABLE_NAME>', engine, if_exists='append', index=False)
 default_args = {
     'owner': 'bses',
     'retries': 5,

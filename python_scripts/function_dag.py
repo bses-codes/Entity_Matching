@@ -114,24 +114,46 @@ def combine(odf, odf1, df, df1, Pid1, Pid2):
     odf1 = odf1.merge(matches_df[['matched_id', 'lookup_id']], left_on=Pid2, right_on='lookup_id', how='left')
     odf1.drop(columns=['lookup_id'], inplace=True)
     # odf.reset_index(inplace=True)
+    odf1['matched_id'] = odf1['matched_id'].astype(str)
+    odf[Pid1] = odf[Pid1].astype(str)
     merged_df = odf1.merge(odf, left_on='matched_id', right_on=Pid1, how='outer')
     merged_df.drop(columns=['matched_id'], inplace=True)
 
     return merged_df
 
 
+def char_to_digit(char):
+    if char.isdigit():
+        return int(char)
+    elif char.isalpha():
+        return (ord(char.lower()) - ord('a') + 1) % 10
+    else:
+        return 0
+
+
+def string_to_digits(s):
+    digits = [char_to_digit(char) for char in s]
+    numeric_string = ''.join(map(str, digits))
+
+    # Ensure the string is exactly 9 digits long
+    if len(numeric_string) > 13:
+        return numeric_string[:13]
+    else:
+        return numeric_string.ljust(13, '0')
+
 # generate unique id for each entry in dataframe
 def generate_unique_id(df):
-    if 'uid' not in df.columns:
-        df['uid'] = ''
-
-    for i in range(len(df)):
-        if df.loc[i, 'uid'] == '' or pd.isna(df.loc[i, 'uid']):
-            chars = string.ascii_uppercase + string.digits
-            uid = ''.join(random.choice(chars) for _ in range(10))
-            while uid in df['uid'].unique():
-                uid = ''.join(random.choice(chars) for _ in range(10))
-            df.loc[i, 'uid'] = uid
+    df['combined'] = df[['Name', 'Father Name', 'Date of Birth']].astype(str).agg(' '.join, axis=1)
+    df['uid'] = df['combined'].apply(lambda x: string_to_digits(x))
+    df.drop(columns=['combined'], inplace=True)
+    # uid = list()
+    # unique_numbers = set()
+    # random.seed(42)
+    # while len(uid) < len(df):
+    #     a = random.randint(0, 10000000000)  # Seed the random number generator for reproducibility
+    #     if a not in unique_numbers:
+    #         unique_numbers.add(a)
+    #         uid.append(a)
 
     return df
 
