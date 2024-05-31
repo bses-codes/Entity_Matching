@@ -4,9 +4,17 @@ import random
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
+from sqlalchemy import create_engine
 
 # read data
 def read_data():
+    # engine = create_engine("mysql+pymysql://<YOUR_DB_USERNAME>:<YOUR_DB_PASSWORD>@host.docker.internal/<YOUR_DB_NAME>")
+    #layout_1 = pd.read_sql(<YOUR_TABLE_NAME>, engine)
+    #layout_1 = pd.read_sql(<YOUR_TABLE_NAME>, engine)
+    #layout_1 = pd.read_sql(<YOUR_TABLE_NAME>, engine)
+    #layout_1 = pd.read_sql(<YOUR_TABLE_NAME>, engine)
+    #layout_1 = pd.read_sql(<YOUR_TABLE_NAME>, engine)
+    #layout_1 = pd.read_sql(<YOUR_TABLE_NAME>, engine)
     layout_1 = pd.read_csv('/opt/airflow/datasets/layout/ABC_layout_1.csv')
     layout_2 = pd.read_csv('/opt/airflow/datasets/layout/PQR_layout_2.csv')
     layout_3 = pd.read_csv('/opt/airflow/datasets/layout/XYZ_layout_3.csv')

@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e47b10bb-f6cb-4d2a-818e-c36ed2e6fa80" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/entity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/entity.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dags/create_final_table_dag.py" beforeDir="false" afterPath="$PROJECT_DIR$/dags/create_final_table_dag.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dags/update_final_table_dag.py" beforeDir="false" afterPath="$PROJECT_DIR$/dags/update_final_table_dag.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/dataframe_lengths.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/dataframe_lengths.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/final_table.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/layout/KLM_layout_4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/layout/KLM_layout_4.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_scripts/function_dag.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_scripts/function_dag.py" afterDir="false" />
-    </list>
+    <list default="true" id="e47b10bb-f6cb-4d2a-818e-c36ed2e6fa80" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +79,7 @@
       <workItem from="1717046358101" duration="28000" />
       <workItem from="1717050987688" duration="55000" />
       <workItem from="1717053239961" duration="7131000" />
-      <workItem from="1717067622643" duration="1873000" />
+      <workItem from="1717067622643" duration="2377000" />
     </task>
     <servers />
   </component>
